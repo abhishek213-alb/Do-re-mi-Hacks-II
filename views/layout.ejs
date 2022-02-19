@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="/css/layout.css">
+<!-- <link rel="stylesheet" href="/css/header.css"> -->
+<!-- <link rel="stylesheet" href="/css/footer.css"> -->
+<%- style %>
+
+<html lang="en">
+    <body>
+        <!-- <%- include('_header'); %> -->
+        <header id="layout-header">
+            <nav>
+                <div class="mini-logo">
+                    <p>
+                        <a href="/">Muzix</a>
+                    </p>
+                </div>
+        
+                <div class="auth-links">
+                    <ul>
+                        <% if(locals.user){ %>
+                            <li>
+                                <a href="/users/profile/<%= user.id %>"><%= user.name %></a>
+                            </li>
+                            <li>
+                                <a href="/users/sign-out">Sign Out</a>
+                            </li>
+                        <% }else{ %>
+                            <li>
+                                <a href="/users/sign-in">Sign In</a>
+                            </li>
+                            <li>
+                                <a href="/users/sign-up">Sign Up</a>
+                            </li>
+                        <% } %>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main id="layout-main">
+            <%- body %>
+        </main>
+
+        <!-- <footer id="layout-footer">
+            <div>
+                <p>
+                    &copy; Muzix 2022 | All Rights Reserved
+                </p>
+            </div>
+        
+            <div>
+                <nav class="footer-nav">
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/users/profile">Profile</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </footer> -->
+        
+
+        <!-- <%- include('_footer'); %> -->
+        <%- script %>
+    </body>
+</html>
