@@ -9,25 +9,38 @@
     </head>
     <body>
 
-      <img src="<%= user.avatar %>" alt="<%= user.name %>" onerror=this.src="/img/default.jpg" width="150" height="150">
-        <!-- <h1>Codeial / <%= title %></h1> -->
+        <section id="container">
+            <img src="<%= user.avatar %>" alt="<%= user.name %>" onerror=this.src="/img/default.jpg" width="150" height="150" id="avatar"> 
+            <!-- <h1>Codeial / <%= title %></h1> -->
 
-        <% if(user.id == profile_user.id){ %>
-            <!-- If user matches then show the form -->  
-  
-            <form action="/users/update/<%= profile_user.id %>" enctype="multipart/form-data" method="POST">
-                <!-- <input type="text" name="name" placeholder="Your name" value="<%= profile_user.name %>" required>
-                <input type="email" name="email" placeholder="Your email" value="<%= profile_user.email %>" required> -->
+            <% if(user.id == profile_user.id){ %>
+                <!-- If user matches then show the form -->  
+    
+                <form action="/users/update/<%= profile_user.id %>" enctype="multipart/form-data" method="POST">
+                    <!-- <input type="text" name="name" placeholder="Your name" value="<%= profile_user.name %>" required>
+                    <input type="email" name="email" placeholder="Your email" value="<%= profile_user.email %>" required> -->
 
-                <input type="file" name="avatar" placeholder="Profile Picture">
-                <input type="submit" value="Update">
-            </form>
-        <% } %>
-            <!-- else show only the profile info -->
-            <p>Name: <%= profile_user.name %></p>
-            <!-- <p>Email: <%= profile_user.email %></p> -->
-            <p>Game1 Score: <%= profile_user.game1 %></p>
-            <p>Game2 Score: <%= profile_user.game2 %></p>
+                    <label for="file-upload" class="button-84">
+                        Select DP
+                    </label>               
+                    <input type="file" name="avatar" placeholder="Profile Picture" class="button-84" role="button" id="file-upload">
+                    <input type="submit" value="Update" class="button-84" role="button">
+                </form>
+            <% } %>
+                <!-- else show only the profile info -->
+                <p>Name: <%= profile_user.name %></p>
+                <!-- <p>Email: <%= profile_user.email %></p> -->
+                <p>Game1 Score: <%= profile_user.game1 %></p>
+                <p>Game2 Score: <%= profile_user.game2 %></p>
 
+                <div>
+                    <a href="/users/game1/<%= user.id %>" class="game_button">Game1</a>
+                    <a href="/users/game2/<%= user.id %>" class="game_button">Game2</a>
+                </div>
+                
+
+       
+        </section>
     </body>
+      
 </html>

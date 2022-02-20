@@ -8,6 +8,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
     />
+    <link rel="stylesheet" href="/css/user_profile.css">
     <link rel="stylesheet" href="/css/game1.css" />
     <title><%= title %></title>
   </head>
@@ -16,7 +17,7 @@
 
     
 
-    <h1>Listen Close!</h1>
+    <h1>Game 1</h1>
     <h3 id="ques"></h3>
 
 
@@ -52,7 +53,7 @@
         <button type="button" onclick="check()"></button>
     </div>
     <form action="/users/update_game1/<%= profile_user.id %>" method="post" id="completed">
-        <button name="game1" value="0" type="submit" id="completed-btn">Completed!</button>
+        <button name="game1" value="0" type="submit" id="completed-btn" class="button-84" style="width: 80%;">Completed!</button>
     </form>
       
     <script>

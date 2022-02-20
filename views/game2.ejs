@@ -8,6 +8,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
     />
+    <link rel="stylesheet" href="/css/user_profile.css">
     <link rel="stylesheet" href="/css/game2.css" />
     <title><%= title %></title>
   </head>
@@ -46,7 +47,7 @@
           </form>
 
           <form action="/users/update_game2/<%= profile_user.id %>" method="post" id="completed">
-            <button name="game2" value="0" type="submit" id="completed-btn">Completed!</button>
+            <button name="game2" value="0" type="submit" id="completed-btn" class="button-84" style="width: 80%">Completed!</button>
           </form>
         </div>
       </div> 

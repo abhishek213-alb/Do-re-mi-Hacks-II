@@ -3,7 +3,7 @@
   box-sizing: border-box; }
 
 body {
-  background-image: linear-gradient(0deg, #f7f7f7 23.8%, #fcdddd 92%);
+  background-image: linear-gradient(to left, #f7f7f7 23.8%, #fcdddd 92%);
   height: 100vh;
   display: flex;
   flex-direction: column;
