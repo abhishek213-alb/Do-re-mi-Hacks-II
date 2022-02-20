@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/game1.css" />
+    <title><%= title %></title>
+  </head>
+  <body>
+
+
+    
+
+    <h1>Listen Close!</h1>
+    <h3 id="ques"></h3>
+
+
+    <div class="music-container" id="music-container">
+      <div class="music-info">
+        <h4 id="title"></h4>
+        <div class="progress-container" id="progress-container">
+          <div class="progress" id="progress"></div>
+        </div>
+      </div>
+
+      <audio src="/music/1.mp3" id="audio"></audio>
+
+      <div class="img-container">
+        <img src="/img/1.jpg" alt="music-cover" id="cover" />
+      </div>
+      <div class="navigation">
+        <button id="prev" class="action-btn">
+          <i class="fas fa-backward"></i>
+        </button>
+        <button id="play" class="action-btn action-btn-big">
+          <i class="fas fa-play"></i>
+        </button>
+        <button id="next" class="action-btn">
+          <i class="fas fa-forward"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="answer">
+        <label for="ans">Enter number of tunes!</label>
+        <input type="text" id="ans">
+        <button type="button" onclick="check()"></button>
+    </div>
+    <form action="/users/update_game1/<%= profile_user.id %>" method="post" id="completed">
+        <button name="game1" value="0" type="submit" id="completed-btn">Completed!</button>
+    </form>
+      
+    <script>
+        var ans = document.getElementById("answer");
+        ans.style.visibility = "hidden";
+
+        var completed = document.getElementById("completed");
+        completed.style.visibility = "hidden";
+    </script>
+
+
+    <script src="/js/game1.js"></script>
+  </body>
+</html>
