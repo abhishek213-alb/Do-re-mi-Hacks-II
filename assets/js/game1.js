@@ -20,13 +20,13 @@ const indices = ['1', '8', '3', '7', '0', '3', '5', '4', '2', '6'];
 
 let i=0;
 let songIndex = parseInt(indices[i]);
-let no_of_tunes = 10-parseInt(indices[i]);
+let no_of_tunes = 10-parseInt(songs[indices[i]])+1;
 ques.innerText = "Qn " + parseInt(i+1);
 function qn_count(){
     ques.innerText = "Qn " + parseInt(i+1);
     songIndex = parseInt(indices[i]);
     loadSong(songs[songIndex]);
-    no_of_tunes = 10-parseInt(indices[i]);
+    no_of_tunes = 10-parseInt(songs[indices[i]])+1;
     i++;
 }
 
@@ -186,13 +186,18 @@ audio.addEventListener('timeupdate',DurTime);
 var ans = document.getElementById("answer");
 ans.style.visibility = "hidden";
 
+var completed = document.getElementById("completed");
+var completedBtn = document.getElementById("completed-btn");
+completed.style.visibility = "hidden";
+
 let score=0;
-var n=0;
+var n=1;
 function toggle(){
     n++;
     console.log("no. of tunes", no_of_tunes);
-    if(n==no_of_tunes-1){
+    if(n==no_of_tunes){
         ans.style.visibility = "visible";
+        n=0;
     }
     console.log(n);
 }
@@ -202,8 +207,13 @@ function check(){
     if(input == no_of_tunes){
         score++;
         console.log("score", score);
-        n=0;
         ans.style.visibility = "hidden";
     }
-    qn_count();
+    if(n==0) ans.style.visibility = "hidden";
+    if(i<=10) qn_count();
+    if(i==11){
+        completedBtn.value = score;
+        completed.style.visibility = "visible";
+        musicContainer.style.visibility = "hidden";
+    }
 }

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/healthcare-webapp');
+mongoose.connect('mongodb://localhost/muzix');
 
 const db = mongoose.connection;
 

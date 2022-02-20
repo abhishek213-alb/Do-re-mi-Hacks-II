@@ -20,6 +20,26 @@ module.exports.game1 = function(req, res){
     })
 }
 
+module.exports.update_game1 = function(req, res){
+    if(req.user.id == req.params.id){
+        try{
+            User.findByIdAndUpdate(req.params.id, {$set:{game1: req.body.game1}}, function (err, data) {
+                if (err){
+                    console.log(err)
+                }
+                else{
+                    console.log("Updated User : ", data);
+                }
+            });
+            console.log(req.body.game1);
+            return res.redirect('back');
+        }
+        catch(err){
+            return res.redirect('back');
+        }
+    }
+}
+
 module.exports.update = async function(req, res){
     if(req.user.id == req.params.id){
         try{
