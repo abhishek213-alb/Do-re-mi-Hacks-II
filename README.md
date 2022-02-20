@@ -44,6 +44,6 @@ Musicallywin.us consists of 2 mini games on the web app which test one's listeni
 
 To a great weekend of hacking by these awesome developers
 
-- [Atharav s](https://github.com/abhishek213-alb) - Twilio Developer
+- [Abhishek](https://github.com/abhishek213-alb) - Twilio Developer
 - [Gyanesh Samanta](https://github.com/GyaneshSamanta) - Team Lead
 - [Pratik Pattnaik](https://github.com/pratik-chandrasekhar-pattanaik) - Full stack developer
