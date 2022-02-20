@@ -40,6 +40,35 @@ module.exports.update_game1 = function(req, res){
     }
 }
 
+module.exports.game2 = function(req, res){
+    User.findById(req.params.id, function(err, user){
+        return res.render('game2',{
+            title: 'Game2',
+            profile_user: user
+        })
+    })
+}
+
+module.exports.update_game2 = function(req, res){
+    if(req.user.id == req.params.id){
+        try{
+            User.findByIdAndUpdate(req.params.id, {$set:{game2: req.body.game2}}, function (err, data) {
+                if (err){
+                    console.log(err)
+                }
+                else{
+                    console.log("Updated User : ", data);
+                }
+            });
+            console.log(req.body.game2);
+            return res.redirect('back');
+        }
+        catch(err){
+            return res.redirect('back');
+        }
+    }
+}
+
 module.exports.update = async function(req, res){
     if(req.user.id == req.params.id){
         try{

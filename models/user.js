@@ -20,6 +20,9 @@ const userSchema = new mongoose.Schema({
     game1: {
         type: Number
     },
+    game2: {
+        type: Number
+    },
     avatar: {
         type: String
     }
